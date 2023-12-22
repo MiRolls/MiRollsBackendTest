@@ -42,7 +42,7 @@ const send = (link: string, body?: any | undefined): boolean => {
     <div>
         <input type="text" placeholder="Server Domain/IP" v-model="server">
     </div>
-    <p>Normal</p>
+    <h3>Normal</h3>
     <div>Get site
         <button type="button" @click='send("/get/site")'>Send</button>
     </div>
@@ -53,10 +53,27 @@ const send = (link: string, body?: any | undefined): boolean => {
         </button>
     </div>
     <div>Create questionnaire
-        <button type="button" @click='send("/roll/create",{title:"问卷标题", quest:[{type:"radio", optionsNumber:3, 选择题特有的选项title:"问题题目",options: ["选项1","选项2","选项3"]},{type:"blank",placeholder:"题目的提示",title:"问题的题目"}],})'>Send</button>
-    </div>
-    <div>Get Rolls
+        <button type="button"
+                @click='send("/roll/create",{title:"问卷标题", quest:[{type:"radio", optionsNumber:3,title:"问题题目",options: ["选项1","选项2","选项3"]},{type:"blank",placeholder:"题目的提示",title:"问题的题目"}],})'>
+            Send
+        </button>
 
+    </div>
+    <div>Get questionnaire
+        <button type="button" @click='send("/get/roll",{link:"MIROLLSDEVELOPERTOLLS"})'>Send</button>
+    </div>
+    <div>Get Data Analysis
+        <button type="button" @click='send("/query/roll",{code:"DEVELOPERTOLLSMIROLLS"})'>Send</button>
+    </div>
+    <h3>Install</h3>
+    <div>Download
+        <button type="button" @click='send("/install/download",{file:"default"})'>Send</button>
+    </div>
+    <div>Database (username: devtoolmrms; password:mrsdevtool, localhost, 3306, dbname:mirolls)
+        <button type="button" @click='send("/install/set/database",{Username:"devtoolmrms",Password:"mrsdevtool",Protocol:"tcp",Host:"localhost",Port:3306,Database:"mirolls"})'>Send</button>
+    </div>
+    <div>Set Site
+<!--        <button type="button" @click='send("/install/set/site",{Name})'>Send</button>-->
     </div>
 </template>
 
