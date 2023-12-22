@@ -73,7 +73,6 @@ const send = (link: string, body?: any | undefined): boolean => {
         <button type="button" @click='send("/install/set/database",{Username:"devtoolmrms",Password:"mrsdevtool",Protocol:"tcp",Host:"localhost",Port:3306,Database:"mirolls"})'>Send</button>
     </div>
     <div>Set Site
-<!--        <button type="button" @click='send("/install/set/site",{Name})'>Send</button>-->
     </div>
 </template>
 
